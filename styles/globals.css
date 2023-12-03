@@ -8,7 +8,7 @@
 body {
   padding: 0;
   margin: 0;
-  background-color: aliceblue;
+  background-color: rgb(215, 229, 243);
 }
 
 a {
@@ -19,7 +19,7 @@ a {
 button {
   cursor: pointer;
 }
-/* 
+
 @keyframes Show {
   0% {
     opacity: .2;
@@ -27,16 +27,4 @@ button {
   }
 }
 
-@keyframes ShowL {
-  0% {
-    opacity: .2;
-    transform: translateX(-100%);
-  }
-}
 
-@keyframes ShowScroll {
-  0% {
-    transform: translateY(-100%);
-  }
-}
- */

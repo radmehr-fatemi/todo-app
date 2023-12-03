@@ -5,9 +5,9 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 //Style
-import styles from "./SignUpPage.module.css";
+import styles from "../sign-up/SignUpPage.module.css";
 
-const SignUpPage = () => {
+const SignInPage = () => {
 
     const router = useRouter();
 
@@ -58,7 +58,7 @@ const SignUpPage = () => {
         <div className={styles.signUpPage} >
 
             <form className={styles.form} >
-                <h1>Register</h1>
+                <h1>Login</h1>
 
                 <input type="email" value={form.email} onChange={changHandler} name="email" id="email" placeholder="email" />
 
@@ -67,8 +67,8 @@ const SignUpPage = () => {
                 <button className={ styles.button } type="submit" onClick={registerHandler}>Submit</button>
 
                 <span>
-                    you have any account?
-                    <Link href="/auth/signin" >Login</Link>
+                    you don`t have a account?
+                    <Link href="/auth/signup" >Register</Link>
                 </span>
 
                 <ToastContainer style={{
@@ -79,4 +79,4 @@ const SignUpPage = () => {
     );
 };
 
-export default SignUpPage;
+export default SignInPage;
