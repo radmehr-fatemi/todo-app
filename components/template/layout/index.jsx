@@ -39,15 +39,15 @@ const Layout = ({ children }) => {
                         <RxCrossCircled onClick={showHandler} />
                     </div>
 
-                    <Link href="/todos" >
+                    <Link href="/todos" onClick={() => setShow(false)} >
                         <RiCalendarTodoLine />
                         Todos
                     </Link>
-                    <Link href="/addtodo" >
+                    <Link href="/addtodo" onClick={() => setShow(false)} >
                         <MdOutlineLibraryAdd />
                         Add todo
                     </Link>
-                    <Link href="/profile" >
+                    <Link href="/profile" onClick={() => setShow(false)} >
                         <CgProfile />
                         Profile
                     </Link>
