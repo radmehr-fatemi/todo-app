@@ -17,7 +17,7 @@
     background-color: #fff;
     border-radius: 20px;
     height: 400px;
-    width: 300px;
+    width: 340px;
     padding: 1rem;
     display: flex;
     justify-content: space-evenly;
@@ -56,7 +56,7 @@
 .form a {
     color: #2b6eb7;
     font-weight: 700;
-    margin-left: .2rem;
+    margin-left: .1rem;
 }
 
 @keyframes Show {

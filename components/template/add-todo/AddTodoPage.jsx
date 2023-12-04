@@ -1,3 +1,6 @@
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 //Icon
 import RadioButton from "@/components/element/RadioButton";
 import { useState } from "react";
@@ -22,7 +25,13 @@ const AddTodoPage = () => {
             body: JSON.stringify({ title, status })
         })
         const data = await res.json();
-        console.log(data)
+        if ( data.status === "success" ) {
+            toast.success("Todo created")
+            setStatus("todo")
+            setTitle("")
+        } else {
+            return toast.error("Todo did not created")
+        }
     }
 
     return (
@@ -90,6 +99,10 @@ const AddTodoPage = () => {
             <div className={styles.button} >
                 <button onClick={addHandler} >Add todo</button>
             </div>
+
+            <ToastContainer style={{
+                padding: "1rem"
+            }} />
         </div>
     );
 };

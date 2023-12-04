@@ -23,24 +23,24 @@ const handler = async ( req ,res ) => {
         massage:"You have note been login yet"
     });
 
-    // const user = await User.findOne({ email: session.user.email });
-    // if ( !user ) return res.status(404).json({
-    //     status:"failed",
-    //     massage:"User has not existed yet"
-    // });
+    const user = await User.findOne({ email: session.user.email });
+    if ( !user ) return res.status(404).json({
+        status:"failed",
+        massage:"User has not existed yet"
+    });
 
-    // const { method ,body } = req;
-    // const { title ,status } = body;
+    const { method ,body } = req;
+    const { title ,status } = body;
 
-    // if ( method === "POST" ) {
-    //     user.todos.push({ title ,status });
-    //     user.save()
-    //     return res.status(201).json({
-    //         status:"success",
-    //         massage:"Todo created",
-    //         data:user.todos
-    //     })
-    // }
+    if ( method === "POST" ) {
+        user.todos.push({ title ,status });
+        user.save()
+        return res.status(201).json({
+            status:"success",
+            massage:"Todo created",
+            data:user.todos
+        })
+    }
     
 
 }

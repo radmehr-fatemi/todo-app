@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Link from "next/link";
 
 //Style
@@ -11,29 +11,51 @@ import { CgProfile } from "react-icons/cg";
 import { RxCrossCircled } from "react-icons/rx";
 import { BiListUl } from "react-icons/bi";
 import { IoIosLogOut } from "react-icons/io";
+import { signOut, useSession } from "next-auth/react";
 
 
 const Layout = ({ children }) => {
 
-    const [ show ,setShow ] = useState(false);
+    const [show, setShow] = useState(false);
+    const [isLoged, setIsLoged] = useState(false);
+    const { status } = useSession();
+
+    useEffect(() => {
+        if (status === "authenticated") {
+            setIsLoged(true)
+        } else {
+            setIsLoged(false)
+            setShow(false)
+        }
+    }, [status ,show])
+
 
     const showHandler = () => {
         setShow(!show)
     }
-    
+
+    const logoutHandler = () => {
+        signOut({redirect:false})
+    }
+
     return (
         <div className={styles.layout} >
             <header className={styles.header} >
-                <BiListUl className={ styles.hamburgerMenu } onClick={ () => setShow(true) } />
+                <BiListUl className={styles.hamburgerMenu} onClick={() => setShow(true)} />
                 <h1>Todo App</h1>
-                <button>
-                    Logout
-                    <IoIosLogOut />
-                    </button>
+                {
+                    isLoged ?
+                        <button onClick={logoutHandler} >
+                            Logout
+                            <IoIosLogOut />
+                        </button> :
+
+                        <button>Register</button>
+                }
             </header>
 
             <div className={styles.main} >
-                <aside className={styles.aside} id={ show ? styles.showSide : styles.unShowSide } >
+                <aside className={styles.aside} id={show ? styles.showSide : styles.unShowSide} >
                     <div className={styles.asideHead} >
                         <h2>Welcome &#128075;</h2>
                         <RxCrossCircled onClick={showHandler} />
