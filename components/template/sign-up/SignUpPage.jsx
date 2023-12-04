@@ -47,7 +47,7 @@ const SignUpPage = () => {
             const data = await res.json();
             if (data.status === "success") {
                 toast.success("Register was successfully")
-                setTimeout(() => router.replace("/"), 1000)
+                setTimeout(() => router.replace("/auth/signin"), 1000)
             } else {
                 return toast.error(data.massage)
             }
@@ -70,11 +70,11 @@ const SignUpPage = () => {
                     you have any account?
                     <Link href="/auth/signin" >Login</Link>
                 </span>
+            </form>
 
                 <ToastContainer style={{
                     padding: "1rem"
                 }} />
-            </form>
         </div>
     );
 };

@@ -45,7 +45,7 @@
 
 /* --------------aside----------------- */
 .aside {
-    width: 50%;
+    width: 80%;
     background-color: #fff;
     height: 100vh;
     position: fixed;
@@ -57,6 +57,7 @@
 
 #showSide {
     animation: ShowSide .3s forwards;
+    box-shadow: 0 0 10pc 1pc #02141b;
 }
 
 #unShowSide {

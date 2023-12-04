@@ -61,7 +61,7 @@
 
 @keyframes Show {
     0% {
-        transform: translateX(20% );
+        transform: scale(0.5);
         opacity: 0;
     }
 }
