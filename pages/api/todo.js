@@ -49,6 +49,21 @@ const handler = async ( req ,res ) => {
             status:"success",
             data:sortedTodos
         })
+
+    } else if ( method === "PATCH" ) {
+        const { id ,status } = body;
+
+        if ( !id || !status ) return res.status(422).json({
+            status:"failed",
+            massage:"Invalid data"
+        })
+
+        const result = await User.updateOne( {"todos._id": id} ,{$set: {"todos.$.status": status}} )
+        res.status(201).json({
+            status:"success",
+            massage:"Data edited",
+            data:result
+        })
     }
     
 

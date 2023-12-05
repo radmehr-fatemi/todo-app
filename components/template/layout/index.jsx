@@ -27,7 +27,7 @@ const Layout = ({ children }) => {
             setIsLoged(false)
             setShow(false)
         }
-    }, [status ,show])
+    }, [status, show])
 
 
     const showHandler = () => {
@@ -35,14 +35,14 @@ const Layout = ({ children }) => {
     }
 
     const logoutHandler = () => {
-        signOut({redirect:false})
+        signOut({ redirect: false })
     }
 
     return (
         <div className={styles.layout} >
             <header className={styles.header} >
                 <BiListUl className={styles.hamburgerMenu} onClick={() => setShow(true)} />
-                <h1>Todo App</h1>
+                <Link href="/"><h1>Todo App</h1></Link>
                 {
                     isLoged ?
                         <button onClick={logoutHandler} >

@@ -31,7 +31,8 @@ const HomePage = () => {
                     classChildren={styles.children}
                     classButtons={styles.buttons}
                     classNextButton={styles.nextButtonsTodo}
-                    next="true"
+                    fetchTodo={fetchTodo}
+                    next="inProgress"
                 >
                     <SiPicartodottv />
                 </Tasks>
@@ -48,8 +49,9 @@ const HomePage = () => {
                     classChildren={styles.children}
                     classNextButton={styles.nextButtonsIsProgress}
                     classBackButton={styles.bachButtonsIsProgress}
-                    next="true"
-                    back="true"
+                    fetchTodo={fetchTodo}
+                    next="review"
+                    back="todo"
                 >
                     <SiPicartodottv />
                 </Tasks>
@@ -66,8 +68,9 @@ const HomePage = () => {
                     classChildren={styles.children}
                     classNextButton={styles.nextButtonsReview}
                     classBackButton={styles.bachButtonsReview}
-                    next="true"
-                    back="true"
+                    fetchTodo={fetchTodo}
+                    next="done"
+                    back="inProgress"
                 >
                     <SiPicartodottv />
                 </Tasks>
@@ -83,7 +86,8 @@ const HomePage = () => {
                     classSpan={styles.done_span}
                     classChildren={styles.children}
                     classBackButton={styles.bachButtonsDone}
-                    back="true"
+                    fetchTodo={fetchTodo}
+                    back="review"
                 >
                     <SiPicartodottv />
                 </Tasks>

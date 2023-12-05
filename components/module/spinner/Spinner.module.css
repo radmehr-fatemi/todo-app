@@ -1,0 +1,10 @@
+.spinner {
+    width: 100vw;
+    text-align: center;
+}
+
+@media ( min-width: 768px ) {
+    .spinner {
+        width: calc( 100vw - 320px );
+    }
+}

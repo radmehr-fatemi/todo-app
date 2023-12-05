@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 
 //Component
 import AddTodoPage from "@/components/template/add-todo/AddTodoPage";
+import Spinner from "@/components/module/spinner/Spinner";
 
 const AddTodo = () => {
 
@@ -20,7 +21,8 @@ const AddTodo = () => {
         }
     }, [status])
 
-    if (isLoged) return <AddTodoPage />
+if ( status === "loading" ) return <Spinner />
+if (isLoged) return <AddTodoPage />
 };
 
 export default AddTodo;

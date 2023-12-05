@@ -1,3 +1,4 @@
+import Spinner from '@/components/module/spinner/Spinner';
 import HomePage from '@/components/template/home/HomePage';
 import { useSession } from "next-auth/react";
 import { useRouter } from "next/router";
@@ -17,7 +18,8 @@ const Home = () => {
       setIsloged(true) 
     }
   }, [status])
-if ( status === "loading" ) return <h1>Loading...</h1>
+
+if ( status === "loading" ) return <Spinner />
   if (isLoged) return <HomePage />
 };
 
