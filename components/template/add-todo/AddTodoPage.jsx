@@ -1,3 +1,4 @@
+import { useRouter } from 'next/router';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
@@ -17,6 +18,7 @@ const AddTodoPage = () => {
 
     const [title, setTitle] = useState("");
     const [status, setStatus] = useState("todo");
+    const router = useRouter()
 
     const addHandler = async () => {
         if ( title.lrngth < 4 || !title.trim() ) return toast.info("Title need to be more than 4 letter")
@@ -31,6 +33,7 @@ const AddTodoPage = () => {
             toast.success("Todo created")
             setStatus("todo")
             setTitle("")
+            setTimeout( () => router.push("/") ,1800 )
         } else {
             return toast.error("Todo did not created")
         }
