@@ -17,7 +17,7 @@ const Home = () => {
       setIsloged(true) 
     }
   }, [status])
-
+if ( status === "loading" ) return <h1>Loading...</h1>
   if (isLoged) return <HomePage />
 };
 

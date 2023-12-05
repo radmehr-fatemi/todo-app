@@ -1,0 +1,140 @@
+.homePage {
+    max-width: 1600px;
+    width: 100vw;
+    display: flex;
+    flex-wrap: wrap;
+
+}
+
+.todos_todo {
+    background-color: #fff;
+    width: 100%;
+    min-height: 200px;
+    margin: .8rem;
+    padding: .8rem;
+    border-radius: 6px;
+    animation: Show .5s;
+}
+
+.todos_todo h2 {
+    text-align: center;
+    color: #fff;
+    padding: .2rem 0;
+}
+
+.h1Todo {
+    background-color: rgb(65, 214, 49);
+}
+
+.h1InProgress {
+    background-color: rgb(87, 163, 186);
+}
+
+.h1Review {
+    background-color: rgb(202, 180, 12);
+}
+
+.h1Done {
+    background-color: rgb(163, 108, 215);
+}
+
+.todo_span,
+.inProgress_span,
+.review_span,
+.done_span {
+    width: 50%;
+    height: 4px;
+    border-radius: 10px;
+    margin: 2rem 0 1rem 0;
+    display: inline-block;
+}
+
+.todo_span {
+    background-color: rgb(65, 214, 49);
+}
+
+.inProgress_span {
+    background-color: rgb(87, 163, 186);
+}
+
+.review_span {
+    background-color: rgb(202, 180, 12);
+}
+
+.done_span {
+    background-color: rgb(163, 108, 215);
+}
+
+.task {
+    margin: 1rem 0;
+    box-shadow: 0 0 12px #7ab5b5;
+    border-radius: 4px;
+    width: 100%;
+    animation: Show .5s 1;
+}
+
+.children {
+    margin-left: 1rem;
+}
+
+.task p {
+    padding: .2rem 0;
+    font-size: 1.1rem;
+}
+
+.buttons {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: .4REM 1REM;
+}
+
+.buttons button {
+    border: none;
+    color: #fff;
+    padding: .2rem .8rem;
+    border-radius: 4px;
+    font-size: 1rem;
+}
+
+.nextButtonsTodo {
+    background-color: rgb(87, 163, 186);
+}
+
+.nextButtonsIsProgress {
+    background-color: rgb(202, 180, 12);
+}
+
+.bachButtonsIsProgress {
+    background-color: rgb(65, 214, 49);
+}
+
+.nextButtonsReview {
+    background-color: rgb(163, 108, 215);
+}
+
+.bachButtonsReview {
+    background-color: rgb(87, 163, 186);
+}
+
+.bachButtonsDone {
+    background-color: rgb(202, 180, 12);
+}
+
+@keyframes Show {
+    0% {
+        transform: scale(0);
+    }
+}
+/* ------------------------------------------------------- */
+@media ( min-width: 768px ) {
+    .homePage {
+        width: calc( 100vw - 320px );
+        justify-content: center;
+    }
+
+    .todos_todo {
+        width: 40%;
+    }
+}

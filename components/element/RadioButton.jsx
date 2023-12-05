@@ -1,6 +1,4 @@
-import React from 'react';
-
-const RadioButton = ({ value ,status ,setStatus ,label, children ,className }) => {
+const RadioButton = ({ value, status, setStatus, label, children, className }) => {
     return (
         <div className={className} >
             <label htmlFor={value}>

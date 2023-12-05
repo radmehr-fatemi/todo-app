@@ -3,6 +3,7 @@ import connectDB from "@/utils/connectDB"
 import { getSession } from "next-auth/react"
 import { authOptions } from "./auth/[...nextauth]"
 import { getServerSession } from "next-auth/next"
+import sortTodos from "@/utils/sortTodos"
 
 const handler = async ( req ,res ) => {
     
@@ -17,7 +18,6 @@ const handler = async ( req ,res ) => {
     }
 
     const session = await getServerSession(req ,res ,authOptions );
-    console.log("Hear------------------" ,session);
     if ( !session ) return res.status(404).json({
         status:"failed",
         massage:"You have note been login yet"
@@ -39,6 +39,15 @@ const handler = async ( req ,res ) => {
             status:"success",
             massage:"Todo created",
             data:user.todos
+        })
+
+    } else if ( method === "GET" ) {
+        const todos = user.todos;
+        const sortedTodos = sortTodos(todos);
+
+        res.status(200).json({
+            status:"success",
+            data:sortedTodos
         })
     }
     

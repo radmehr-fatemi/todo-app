@@ -24,7 +24,6 @@ export const authOptions = {
                 }
 
                 const existingUser = await User.findOne({ email: email });
-                console.log("Hear--------------------------", existingUser)
                 if (!existingUser) throw new Error("User has not existed yet");
 
                 const isValid = await verifyPassword(password, existingUser.password);

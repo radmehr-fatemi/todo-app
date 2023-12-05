@@ -19,6 +19,8 @@ const AddTodoPage = () => {
     const [status, setStatus] = useState("todo");
 
     const addHandler = async () => {
+        if ( title.lrngth < 4 || !title.trim() ) return toast.info("Title need to be more than 4 letter")
+        
         const res = await fetch("/api/todo", {
             method: "POST",
             headers: { "Content-Type": "Application/json" },

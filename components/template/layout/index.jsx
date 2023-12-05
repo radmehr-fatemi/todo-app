@@ -61,7 +61,7 @@ const Layout = ({ children }) => {
                         <RxCrossCircled onClick={showHandler} />
                     </div>
 
-                    <Link href="/todos" onClick={() => setShow(false)} >
+                    <Link href="/" onClick={() => setShow(false)} >
                         <RiCalendarTodoLine />
                         Todos
                     </Link>
