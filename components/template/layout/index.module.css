@@ -164,11 +164,16 @@
     .aside {
         position: relative;
         top: -2rem;
-        /* transform: translateX(0) !important; */
         width: 320px;
         border-top-right-radius: 40px;
         border-top-left-radius: 40px;
         padding: 2 rem;
+        background-color: #fff;
+        color: #111;
+    }
+
+    .aside a {
+        color: #111;
     }
 
     #unShowSide {
