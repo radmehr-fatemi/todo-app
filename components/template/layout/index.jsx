@@ -38,7 +38,7 @@ const Layout = ({ children }) => {
 
     const logoutHandler = () => {
         signOut({ redirect: false })
-        router.reload()
+        router.replace("/auth/signup")
     }
 
     return (

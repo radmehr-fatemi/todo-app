@@ -1,6 +1,5 @@
 import User from "@/model/User"
 import connectDB from "@/utils/connectDB"
-import { getSession } from "next-auth/react"
 import { authOptions } from "./auth/[...nextauth]"
 import { getServerSession } from "next-auth/next"
 import sortTodos from "@/utils/sortTodos"

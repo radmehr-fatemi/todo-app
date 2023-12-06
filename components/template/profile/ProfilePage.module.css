@@ -2,27 +2,57 @@
     max-width: 1600px;
     width: 100vw;
     min-height: 88vh;
-    padding: 1rem;
+    padding: 1rem 2rem;
 }
 
 .profilePage h2 {
     text-align: center;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-around;
+    background-color: #588aae;
+    color: #fff;
+    border-radius: 50%;
+    width: 120px;
+    margin: auto;
+    padding: .4rem;
+    border: 5px solid #fff;
+    box-shadow: 0 0 8px #759faa;
+    animation: ShowS .5s;
 }
 
 .profileContent div {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    width: 80%;
-    margin: auto;
-    padding: .5rem 0;
+    width: 100%;
+    margin: .5rem 0;
+    padding: .5rem;
+    border: 2px solid #fff;
+    border-radius: 8px;
+}
+
+.profileContent div:nth-child(1) {
+    animation: Show .5s .6s;
+}
+.profileContent div:nth-child(2) {
+    animation: Show .5s .4s;
+}
+.profileContent div:nth-child(3) {
+    animation: Show .5s .2s;
 }
 
 .profileContent {
-    padding: 2rem 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem ;
+    background-color: #588aae;
+    color: #fff;
+    border-radius: 8px;
+    margin-top: 1rem;
+    animation: ShowS .5s;
 }
 
 .profileContent p {
@@ -41,20 +71,47 @@
     padding: .4rem;
     border-radius: 6px;
     box-shadow: 0 0 8px #759faa;
+    animation: ShowS .5s .3s;
 }
 
 .profileForm label {
     margin-top: .3rem;
+    animation: ShowS .3s .1s;
 }
 
 .profileForm button {
+    width: 100px;
+    margin: .6rem auto;
     border: none;
-    background-color: rgb(0, 174, 174);
+    background-color: #588aae;
     color: #fff;
     border-radius: 6px;
     padding: .2rem;
     font-size: 1rem;
-    margin-top: .6rem;
+    animation: ShowW .5s;
+    overflow: hidden;
+}
+
+.profileForm button:hover {
+    background-color: #5c99c5;
+}
+
+@keyframes Show {
+    0% {
+        transform: translateY(-100px);
+        opacity: 0;
+    }
+}
+
+@keyframes ShowS {
+    0% {
+        transform: scale(0);
+    }
+}
+@keyframes ShowW {
+    0% {
+        width: 0;
+    }
 }
 
 /* ----------------------------------- */
@@ -62,11 +119,12 @@
     .profilePage {
         width: calc( 100vw - 320px );
     }
-    
-    .profileContent div {
-        width: 50%;
-    }
 
+    .profileContent {
+        width: 60%;
+        margin: 2rem auto;
+    }
+    
     .profileForm {
         width: 60%;
         margin: auto;

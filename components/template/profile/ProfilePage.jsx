@@ -14,7 +14,8 @@ import ProfileContent from '@/components/module/profile/ProfileContent';
 
 const ProfilePage = () => {
 
-    const [data, setData] = useState(null);
+    const [data, setData] = useState({});
+    const [show, setShow] = useState(false);
     const [form, setForm] = useState({
         name: "",
         lastName: "",
@@ -44,7 +45,8 @@ const ProfilePage = () => {
 
     useEffect(() => {
         fetchData()
-    }, [])
+        if ( !!data.name ) setShow(true)
+    }, [data])
 
     return (
         <div className={styles.profilePage} >
@@ -54,14 +56,16 @@ const ProfilePage = () => {
             </h2>
 
             {
-                !data ?
+                !show &&
                     <ProfileForm
                         form={form}
                         setForm={setForm}
                         patchData={patchData}
                         className={styles.profileForm}
-                    /> :
-
+                    /> 
+            }
+            {
+                !!show &&
                     <ProfileContent
                         data={data}
                         className={styles.profileContent}

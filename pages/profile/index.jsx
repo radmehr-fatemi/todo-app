@@ -1,6 +1,4 @@
-import { getSession, useSession } from "next-auth/react";
-import { useEffect, useState } from "react";
-import { useRouter } from "next/router";
+import { getSession } from "next-auth/react";
 
 //Component
 import ProfilePage from "@/components/template/profile/ProfilePage";
@@ -16,7 +14,7 @@ export const getServerSideProps = async ({ req }) => {
     const session = await getSession({ req });
 
     if (!session) return {
-        redirect: { destination: "/signup", permanent: false }
+        redirect: { destination: "/auth/signup", permanent: false }
     }
 
     return {

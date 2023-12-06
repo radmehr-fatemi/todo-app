@@ -49,7 +49,7 @@ const SignUpPage = () => {
                 toast.success("Register was successfully")
                 setTimeout(() => router.replace("/auth/signin"), 1000)
             } else {
-                return toast.error("Sorry there is a problem")
+                return toast.error(data.massage)
             }
         }
     };

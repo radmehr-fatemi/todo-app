@@ -6,11 +6,20 @@
 }
 
 .addTodoPage h1 {
+    text-align: center;
     display: flex;
     align-items: center;
-    justify-content: center;
-    margin-bottom: 1rem;
-    font-size: 1.7rem;
+    justify-content: space-around;
+    background-color: #588aae;
+    color: #fff;
+    border-radius: 50%;
+    width: fit-content;
+    margin: auto;
+    padding: .8rem;
+    font-size: 1.6rem;
+    border: 5px solid #fff;
+    box-shadow: 0 0 8px #759faa;
+    animation: ShowS .5s;
 }
 
 .fields {}
@@ -150,6 +159,11 @@
     100% {
         transform: translateY(0);
         opacity: 1;
+    }
+}
+@keyframes ShowS {
+    0% {
+        transform: scale(0);
     }
 }
 
