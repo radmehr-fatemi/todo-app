@@ -33,7 +33,7 @@ const AddTodoPage = () => {
             toast.success("Todo created")
             setStatus("todo")
             setTitle("")
-            setTimeout( () => router.push("/") ,1800 )
+            setTimeout( () => router.push("/") ,1500 )
         } else {
             return toast.error("Todo did not created")
         }

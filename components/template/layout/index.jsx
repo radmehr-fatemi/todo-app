@@ -1,3 +1,4 @@
+import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 import Link from "next/link";
 
@@ -19,6 +20,7 @@ const Layout = ({ children }) => {
     const [show, setShow] = useState(false);
     const [isLoged, setIsLoged] = useState(false);
     const { status } = useSession();
+    const router = useRouter();
 
     useEffect(() => {
         if (status === "authenticated") {
@@ -36,6 +38,7 @@ const Layout = ({ children }) => {
 
     const logoutHandler = () => {
         signOut({ redirect: false })
+        router.reload()
     }
 
     return (
